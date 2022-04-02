@@ -885,7 +885,89 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
         await alpha.send5ButImg(from, lang.tos(ownernomer) , `© ${ownername}`,qris, but , { userJid: m.chat, quoted: m })
     }
  break
-      
+   
+case 'introda3': case 'da3':{
+			if (!m.isGroup) return reply(mess.group)
+				if (!isBotAdmins) return reply(lang.botNotAdmin())
+					await 
+    m.reply('──⸙̣᭢➯[HLO NEW MEM] ⬅️✅\n┊ ╭────╮╭࿎࿎─── ︿︿︿︿︿ .\n┊〲━❋✨    ̲Welcome Dunia Anime 3_\n┊ ╰────╯╰࿎࿎─── ︿︿︿︿︿ .\n╭❀:ཻུ۪۪─────────────────╮\n┊🌼┊╰─❒Nama= \n┊🍃┊╰─❒Umur= \n┊🍂┊╰─❒Cewe/Cowo= \n┊🌻┊╰─❒Bekerja/pelajar= \n┊🐣┊╰─❒Komik Fav=  \n┊🥀┊╰─❒Niat masuk grup= \n╰─❀ TOLONG PATUHI RULES!!🐣✨\n:ཻུ۪۪────────────────╯*\n✧ ⃟ ⃟ ━━━ೋ๑୨۝୧๑ೋ━━━ ⃟ ⃟ ✧')
+}
+	break
+case 'introda1': case 'da1':{
+			if (!m.isGroup) return reply(mess.group)
+				if (!isBotAdmins) return reply(lang.botNotAdmin())
+					await 
+    m.reply('🅓🅤🅝🅘🅐 🅐🅝🅘🅜🅔 1🍺\n■□■□■□■□■□■□■□■□■□■   \n| • Nama =\n| • Umur =\nl • Cewe/Cowo  =\n| • Status =\nl • Asal daerah =\nl • Anime favorit =\n| • Niat patuhi rules =\n■□■□■□■□■□■□■□■□■□■\n📍 Kamu member baru?silahkan intro dulu yak\n📍 intro ya kak entar kalo ga intro Dede entar ngambek  >\\\<\n\n_• Kapten And Crew')
+}
+	break   
+case 'introdaofc': case 'daofc':{
+			if (!m.isGroup) return reply(mess.group)
+				if (!isBotAdmins) return reply(lang.botNotAdmin())
+					await 
+    m.reply('✮WELCOME TO DUNIA ANIME•ⓞⓕⓕⓘⓒⓘⓐⓛ🧋✮\nSilahkan di isi intro di bawah ini.\n╭════•›ꪶ ཻུ۪۪ꦽꦼ ━ ━ ━ ━ ꪶ ཻུ۪۪ꦽꦼ‹•════\n│       INTRO\n| • Nama : \n| • Umur : \nl • Gender : \nl • Asal : \nl • Status : \n| • Husbu/Waifu : \nl •Anime favorit : \n| •Tujuan masuk gc : \n╰═════ꪶ ཻུ۪۪ꦽꦼ━ ━ ━ ━ ꪶ ཻུ۪۪ꦽꦼ═════\nSelamat bergabung dan semoga betah(≡^∇^≡)\n\n\n⚠️ RULES/PERATURAN GROUP\n➡️ LARANGAN CHAT💬 :\n• Dilarang toxic & rasis\n• Dilarang nyimak & nabung pesan\n• Dilarang membahas selain anime, manga, manhua, dan manhwa\n➡️ MEDIA📌 : \n• Stiker 4x, gif 3x sehari (lebih kick)\n• Pesan suara 5x sehari (lebih kick)\n• Video, foto, musik 5x file/menit (lewati batas kick)\n➡️ LARANGAN SHARE📲 : \n• Dilarang share 18+ (porno/sex/adult)\n• Dilarang share link phising/hoax\n• Dilarang share group WA, Tele, Channel YT\n• Dilarang promosi WA, Tele, Channel YT\n➡️ TUJUAN🖊️ : \n• Membahas seputar manga, manhua, manhwa (DA 3)\n• Berbagi rekomendasi & info update anime (DA 1)\n• Menjalin solidaritas animelovers, wibu, dan otaku\n• Saling berbagi ilmu bahasa Jepang (DA 2)\n➡️ NOTE📝: \n• Jika melanggar aturan tersebut akan dikeluarkan dari group\n\n~ Baca & patuhi rules tersebut ~ 🤝🏻')
+}
+	break
+case 'rulesda': case 'rda':{
+			if (!m.isGroup) return reply(mess.group)
+				if (!isBotAdmins) return reply(lang.botNotAdmin())
+					await 
+    m.reply('⚠️ RULES/PERATURAN GROUP\n➡️ LARANGAN CHAT💬 :\n• Dilarang toxic & rasis\n• Dilarang nyimak & nabung pesan\n• Dilarang membahas selain anime, manga, manhua, dan manhwa\n➡️ MEDIA📌 : \n• Stiker 4x, gif 3x sehari (lebih kick)\n• Pesan suara 5x sehari (lebih kick)\n• Video, foto, musik 5x file/menit (lewati batas kick)\n➡️ LARANGAN SHARE📲 : \n• Dilarang share 18+ (porno/sex/adult)\n• Dilarang share link phising/hoax\n• Dilarang share group WA, Tele, Channel YT\n• Dilarang promosi WA, Tele, Channel YT\n➡️ TUJUAN🖊️ : \n• Membahas seputar manga, manhua, manhwa (DA 3)\n• Berbagi rekomendasi & info update anime (DA 1)\n• Menjalin solidaritas animelovers, wibu, dan otaku\n• Saling berbagi ilmu bahasa Jepang (DA 2)\n➡️ NOTE📝: \n• Jika melanggar aturan tersebut akan dikeluarkan dari group\n\n~ Baca & patuhi rules tersebut ~ 🤝🏻')
+}
+	break
+case 'rules1': case 'r1':{
+			if (!m.isGroup) return reply(mess.group)
+					await 
+    m.reply('Welcome\n1.Attitude first\n2.admin words are absolute\n3.Dont send porn/gore content in any kind\n4.Dont talk about sara and racism\n5.Links, spam and promotions are not allowed in this group.\n~~~~~\nAturan Grup\n1.Sikap dulu\n2.Perkataan admin adalah mutlak\n3.Jangan mengirim konten porno/gore dalam bentuk apa pun\n4.Jangan bicara tentang sara dan rasisme\n5.Link,spam,dan promosi tidak diperbolehkan di grup ini')
+}
+	break
+case 'welcome':{
+			if (!m.isGroup) return reply(mess.group)
+					await 
+    m.reply('──⸙̣᭢➯[HLO NEW MEM] ⬅️✅\n┊ ╰────╯╰࿎࿎─── ︿︿︿︿︿ .\n╭❀:ཻུ۪۪─────────────────╮\n┊🌼┊╰─❒Nama= \n┊🍃┊╰─❒Umur= \n┊🍂┊╰─❒Cewe/Cowo= \n┊🌻┊╰─❒Bekerja/pelajar= \n┊🥀┊╰─❒Niat masuk grup= \n╰─❀ TOLONG PATUHI RULES!!🐣✨\n:ཻུ۪۪────────────────╯*\n✧ ⃟ ⃟ ━━━ೋ๑୨۝୧๑ೋ━━━ ⃟ ⃟ ✧')
+}
+	break
+case 'sayang':{
+					await 
+    m.reply('Iya sayang❤️ , kenapa?')
+}
+	break   
+case 'iya_kan_sayang':{
+					await 
+    m.reply('Iya sayang❤️')
+}
+	break
+case 'kangen':{
+					await 
+    m.reply('Uhhhh sayang, aku juga kangen >/////<')
+}
+	break
+case 'tes':{
+					await 
+    m.reply('Bot aktif kak')
+}
+	break
+case 'lagi_apa?':{
+					await 
+    m.reply('Lagi baca chat orang sayang')
+}
+	break
+case 'sibuk_ya?':{
+					await 
+    m.reply('Enggak kok, aku kan selalu ada buat kamu🥰')
+}
+	break
+case 'jadi_makin_sayang_deh':{
+					await 
+    m.reply('Aku juga makin sayang sama kamu 🥰')
+}
+	break
+case 'introda2': case 'da2':{
+			if (!m.isGroup) return reply(mess.group)
+				if (!isBotAdmins) return reply(lang.botNotAdmin())
+					await 
+    m.reply('WELCOME TO ANIME WORLD 2🧋\nsilahkan isi intro di bawah ini !!\n╭════•›ꪶ ཻུ۪۪ꦽꦼ  INTRO MEMBER ꪶ ཻུ۪۪ꦽꦼ‹•════\n| • nama : \n| • umur : \n| • gender : \n| • asal : \n| • status : \n| • paham B. Jepang ? :\n| • tujuan join : \n╰═════ꪶ ཻུ۪۪ꦽꦼ━ ━ ━ ━ ꪶ ཻུ۪۪ꦽꦼ═════\nMari saling mengajari dan berbagi pengalaman berbahasa Jepang 📑')
+}
+	break
 //Random Anime
 				case 'cry':case 'kill':case 'hug':case 'pat':case 'lick':case 'kiss':case 'bite':case 'yeet':case 'neko':case 'bully':case 'bonk':case 'wink':case 'poke':case 'nom':case 'slap':case 'smile':case 'wave':case 'awoo':case 'blush':case 'smug':case 'glomp':case 'happy':case 'dance':case 'cringe':case 'cuddle':case 'highfive':case 'shinobu':case 'megumin':case 'handhold':
 					reply(lang.wait())
