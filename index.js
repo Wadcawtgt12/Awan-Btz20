@@ -1297,6 +1297,107 @@ await alpha.updateProfilePicture(groupId, { url: media }).catch((err) => fs.unli
 reply(lang.ok())
 }
 break
+
+             case 'osetname': case 'osetsubject': {
+                if (!m.isGroup) return reply(mess.group)
+				if (!isCreator) return reply(lang.ownerOnly())
+				if (!isBotAdmins) return reply(lang.botNotAdmin())
+				if (!text) return reply(`Kirim perintah ${prefix + command} *teks*`)
+                await alpha.groupUpdateSubject(m.chat, text).then((res) => m.reply(lang.ok())).catch((err) => m.reply(jsonformat(err)))
+            }
+            break
+             case 'osetdesc': case 'osetdesk': case 'osetdeskripsi':{
+             	if (!m.isGroup) return reply(mess.group)
+				if (!isCreator) return reply(lang.ownerOnly())
+				if (!isBotAdmins) return reply(lang.botNotAdmin())
+				if (!text) return reply(`Kirim perintah ${prefix + command} *teks*`)
+				alpha.groupUpdateDescription(m.chat, `${args.join(" ")}`)
+				reply(lang.ok())
+				}
+				break
+            case '0group': case 'ogrup':
+                if (!m.isGroup) return reply(lang.groupOnly())
+                if (!isBotAdmins) return reply(lang.botNotAdmin())
+                if (!isCreator) return reply(lang.ownerOnly())
+                if (args[0] === 'open'){
+                    await alpha.groupSettingUpdate(from, 'not_announcement')
+		 		   reply(lang.ok())
+                } else if (args[0] === 'close'){
+                    await alpha.groupSettingUpdate(from, 'announcement')
+                    reply(lang.ok())
+                } else {
+                    alpha.sendButMessage(from, 'GROUP SETTING', `© ${ownername}`, [{buttonId: 'group open', buttonText: {displayText: 'Open'}, type: 1},{buttonId: 'group close', buttonText: {displayText: 'Close'}, type: 1}], {quoted: fgif})
+                }
+            break 
+            case 'osetppgrup': case 'osetppgc': {
+if (!m.isGroup) return reply(lang.groupOnly())
+if (!isBotAdmins) return reply(lang.botNotAdmin())
+if (!isCreator) return reply(lang.ownerOnly())
+if (!quoted) return reply(`Kirim/Reply Image Dengan Caption ${prefix + command}`)
+if (!/image/.test(mime)) return reply(`Kirim/Reply Image Dengan Caption ${prefix + command}`)
+let media = await alpha.downloadAndSaveMediaMessage(quoted)
+await alpha.updateProfilePicture(groupId, { url: media }).catch((err) => fs.unlinkSync(media))
+reply(lang.ok())
+}
+break
+            case 'otagall': case 'oinfoall':
+                if (!m.isGroup) return reply(lang.groupOnly())
+                if (!isCreator) return reply(lang.ownerOnly())
+                let tekss = `══✪〘 *👥 Mention All* 〙✪══\n\n➲ *Message : ${q ? q : 'Nothing'}*\n\n`
+		      	for (let mem of participants) {
+		            tekss += `🏅 @${mem.id.split('@')[0]}\n`
+				}
+                tekss += `\n⋙ *${botname}* ⋘`
+                alpha.sendMessage(from, { text: tekss, mentions: participants.map(a => a.id) }, { quoted: fkontak })
+            break
+            case 'ohidetag':
+                if (!m.isGroup) return reply(lang.groupOnly())
+                if (!isCreator) return reply(lang.ownerOnly())
+                alpha.sendMessage(from, { text : q ? q : '' , mentions: participants.map(a => a.id)}, {quoted: fkontak})
+            break
+            case 'okick': {
+				if (!m.isGroup) return reply(lang.groupOnly())
+                if (!isBotAdmins) return reply(lang.botNotAdmin())
+                if (!isCreator) return reply(lang.ownerOnly())
+                if (!m.quoted && !text) return reply(`Kirim nomer/tag/reply target yang ingin di kick !`)
+				let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
+				await alpha.groupParticipantsUpdate(m.chat, [users], 'remove').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
+				}
+				break
+			case 'oadd': {
+				if (!m.isGroup) return reply(lang.groupOnly())
+                if (!isBotAdmins) return reply(lang.botNotAdmin())
+                if (!isCreator) return reply(lang.ownerOnly())
+                if (!m.quoted && !text) return reply(`Kirim nomer/tag/reply target yang ingin di promote !`)
+				let users = m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
+				await alpha.groupParticipantsUpdate(m.chat, [users], 'add').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
+				}
+				break
+			case 'opromote': {
+				if (!m.isGroup) return reply(lang.groupOnly())
+                if (!isBotAdmins) return reply(lang.botNotAdmin())
+                if (!isCreator) return reply(lang.ownerOnly())	
+                if (!m.quoted && !text) return reply(`Kirim nomer/tag/reply target yang ingin di promote !`)
+				let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
+				await alpha.groupParticipantsUpdate(m.chat, [users], 'promote').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
+				}
+				break
+			case 'odemote': {
+				if (!m.isGroup) return reply(lang.groupOnly())
+                if (!isBotAdmins) return reply(lang.botNotAdmin())
+                if (!isCreator) return reply(lang.ownerOnly())
+                if (!m.quoted && !text) return reply(`Kirim nomer/tag/reply target yang ingin di demote !`)
+				let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
+				await alpha.groupParticipantsUpdate(m.chat, [users], 'demote').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
+				}
+				break
+			case 'orevoke':
+                if (!m.isGroup) return reply(lang.groupOnly())
+                if (!isBotAdmins) return reply(lang.botNotAdmin())
+                if (!isCreator) return reply(lang.ownerOnly())
+                let link = await alpha.groupRevokeInvite(from)
+                await reply(lang.ok() + `\n\n*New Link for ${groupName}* :\n https://chat.whatsapp.com/${link}`)
+            break
             case 'join': {
                 if (!isCreator) return reply(lang.ownerOnly())
                 if (!text) throw 'Masukkan Link Group!'
