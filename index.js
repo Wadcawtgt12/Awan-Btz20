@@ -1340,9 +1340,9 @@ await alpha.updateProfilePicture(groupId, { url: media }).catch((err) => fs.unli
 reply(lang.ok())
 }
 break
-            case 'otagall': case 'oinfoall':
+             case 'tagall': case 'infoall':
                 if (!m.isGroup) return reply(lang.groupOnly())
-                if (!isCreator) return reply(lang.ownerOnly())
+                if (!(isGroupAdmins || isGroupOwner )) return reply(lang.adminOnly())
                 let tekss = `══✪〘 *👥 Mention All* 〙✪══\n\n➲ *Message : ${q ? q : 'Nothing'}*\n\n`
 		      	for (let mem of participants) {
 		            tekss += `🏅 @${mem.id.split('@')[0]}\n`
