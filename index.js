@@ -1340,16 +1340,7 @@ await alpha.updateProfilePicture(groupId, { url: media }).catch((err) => fs.unli
 reply(lang.ok())
 }
 break
-             case 'tagall': case 'infoall':
-                if (!m.isGroup) return reply(lang.groupOnly())
-                if (!(isGroupAdmins || isGroupOwner )) return reply(lang.adminOnly())
-                let tekss = `══✪〘 *👥 Mention All* 〙✪══\n\n➲ *Message : ${q ? q : 'Nothing'}*\n\n`
-		      	for (let mem of participants) {
-		            tekss += `🏅 @${mem.id.split('@')[0]}\n`
-				}
-                tekss += `\n⋙ *${botname}* ⋘`
-                alpha.sendMessage(from, { text: tekss, mentions: participants.map(a => a.id) }, { quoted: fkontak })
-            break
+
             case 'ohidetag':
                 if (!m.isGroup) return reply(lang.groupOnly())
                 if (!isCreator) return reply(lang.ownerOnly())
@@ -1397,7 +1388,7 @@ break
                 if (!isCreator) return reply(lang.ownerOnly())
                 let link = await alpha.groupRevokeInvite(from)
                 await reply(lang.ok() + `\n\n*New Link for ${groupName}* :\n https://chat.whatsapp.com/${link}`)
-            break
+            break 
             case 'join': {
                 if (!isCreator) return reply(lang.ownerOnly())
                 if (!text) throw 'Masukkan Link Group!'
