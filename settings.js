@@ -20,7 +20,7 @@ global.available = false //status online (online)
 // Other
 global.botname = "Sean-Mdོ" //namabot kalian
 global.ownername= "Awan" //nama kalian
-global.myweb ="https://api-alphabot.herokuapp.com/" //bebas asal jan hapus
+global.myweb ="https://setiawangmg.blogspot.com/" //bebas asal jan hapus
 global.youtube = "https://www.youtube.com/channel/UCe_P-ZnVXLad87klMv-_VfQ/" //bebas asal jan hapus
 global.github = "https://github.com/Awan-Btz/" //bebas
 global.email = "seti.awan.max100@gmail.com" //bebas
