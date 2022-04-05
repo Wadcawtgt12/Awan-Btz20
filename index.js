@@ -1448,18 +1448,7 @@ break
 				let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
 				await alpha.groupParticipantsUpdate(m.chat, [users], 'demote').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
 				}
-				break
-			case 'revoke':
-                if (!m.isGroup) return reply(lang.groupOnly())
-                if (!isBotAdmins) return reply(lang.botNotAdmin())
-
-                if (!(isGroupAdmins || isGroupOwner )) return reply(lang.adminOnly())
-
-                let link = await alpha.groupRevokeInvite(from)
-
-                await reply(lang.ok() + `\n\n*New Link for ${groupName}* :\n https://chat.whatsapp.com/${link}`)
-
-            break
+				
             case 'out':
                 if (!m.isGroup) return reply(lang.groupOnly())
                 if (!m.key.fromMe && !isCreator) return reply(lang.ownerOnly())
